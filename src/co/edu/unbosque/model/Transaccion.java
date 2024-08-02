@@ -1,6 +1,9 @@
 package co.edu.unbosque.model;
 
-public class Transaccion {
+import java.io.Serializable;
+
+public class Transaccion implements Serializable{
+	private static final long serialVersionUID = 9181251307169452733L;
 	private long monto;
 	private int id;
 	private String hora;

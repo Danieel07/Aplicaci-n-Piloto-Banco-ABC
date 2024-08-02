@@ -32,7 +32,7 @@ public class Console {
 	    public char readLetter(){
 	        return reader.next().charAt(0);
 	    }
-	    public void showText(String text){
+	    public void printText(String text){
 	        System.out.println(text);
 	    }
 	    

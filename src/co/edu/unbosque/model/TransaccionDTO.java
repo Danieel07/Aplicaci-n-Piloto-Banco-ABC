@@ -2,9 +2,7 @@ package co.edu.unbosque.model;
 
 import java.io.Serializable;
 
-public class TransaccionDTO implements Serializable{
-
-	private static final long serialVersionUID = 2693282726117875779L;
+public class TransaccionDTO{
 	private long monto;
 	private int id;
 	private String hora;

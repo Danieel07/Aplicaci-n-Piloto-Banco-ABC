@@ -23,4 +23,17 @@ public class ClienteDAO {
 		}	
 		return salida;
 	}
+	public String consultarNombreCliente(long cedula) {
+		String nombre = "";
+		for (Cliente cliente : listaClientes) {
+			if(cliente.getCedula() == cedula) {
+				nombre = cliente.getNombre();
+				break;
+			}
+		}
+		return nombre;
+	}
+	public ArrayList<Cliente> getList(){
+		return listaClientes;
+	}
 }
