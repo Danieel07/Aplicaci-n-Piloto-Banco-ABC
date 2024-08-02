@@ -60,7 +60,7 @@ public class TransaccionDAO implements Operaciones {
 		switch (tipoUsuario) {
 		case "Cliente": {
 			for (Transaccion transaccion : lista) {
-				if(transaccion.getNombreCliente() == nombreCliente){
+				if(transaccion.getNombreCliente().equals(nombreCliente)){
 					salida += transaccion.toString();
 				}
 			}
@@ -68,7 +68,7 @@ public class TransaccionDAO implements Operaciones {
 		}case "Cajero":{
 			for (Transaccion transaccion : lista) {
 				if(transaccion.getId() == id){
-					salida += transaccion.toString();
+					salida = transaccion.toString();
 				}
 			}
 			break;

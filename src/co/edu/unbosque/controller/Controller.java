@@ -36,6 +36,7 @@ public class Controller {
 					con.printText("Digite Su Numero De Cedula:");
 					long cedulaCliente = con.readLong();
 					String nombreCliente = mf.getClienteDAO().consultarNombreCliente(cedulaCliente);
+					System.out.println(nombreCliente);
 					con.printText(mf.getTransaccionDAO().consultarTransaccion(0, "Cliente", nombreCliente));
 					break;
 				}case 3: {
@@ -62,13 +63,12 @@ public class Controller {
 					int hora = con.readInt();
 					int horaMax = 18;
 					int horaMin = 16;
-					String horaString = "";
-					horaString.indent(hora);
+					String horaString = Integer.toString(hora);
 					con.printText("Nombre Del Cliente Quien Realizo la Transacción:");
 					con.readLine();
 					String nombreCliente = con.readLine();
 					if(monto > 1500000 && hora <= horaMax && hora >= horaMin) {
-						Transaccion newTransaccion = mf.getDataMapper().toTransaccion(new TransaccionDTO(monto, id, horaString, nombreCliente));
+						Transaccion newTransaccion = mf.getDataMapper().toTransaccion(new TransaccionDTO(monto, id,"A las " + horaString+" Horas", nombreCliente));
 						mf.getTransaccionDAO().crearTransaccion(newTransaccion);
 						con.printText("Transaccion Creada Con exito");
 					}else {
